@@ -1,0 +1,606 @@
+/* Variáveis de cores e estilos globais */
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #3b82f6;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-light: #6b7280;
+  --background-light: #ffffff;
+  --background-gray: #f3f4f6;
+  --border-color: #e5e7eb;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --transition: all 0.2s ease-in-out;
+}
+
+/* Layout principal */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--background-light) 0%, var(--background-gray) 100%);
+}
+
+.auth-content {
+  width: 100%;
+  max-width: 28rem;
+  background: var(--background-light);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-content h2 {
+  color: var(--text-primary);
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  z-index: 1;
+  transition: var(--transition);
+}
+
+.input-with-icon:focus-within .input-icon {
+  color: var(--primary-color);
+}
+
+.input-with-icon input,
+.input-with-icon input[type="text"],
+.input-with-icon input[type="email"],
+.input-with-icon input[type="password"],
+.input-with-icon input.masked-input {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  color: var(--text-primary);
+  background-color: var(--background-light);
+  transition: var(--transition);
+}
+
+.input-with-icon input:hover,
+.input-with-icon input[type="text"]:hover,
+.input-with-icon input[type="email"]:hover,
+.input-with-icon input[type="password"]:hover,
+.input-with-icon input.masked-input:hover {
+  border-color: var(--primary-light);
+}
+
+.input-with-icon input:focus,
+.input-with-icon input[type="text"]:focus,
+.input-with-icon input[type="email"]:focus,
+.input-with-icon input[type="password"]:focus,
+.input-with-icon input.masked-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.input-with-icon input::placeholder {
+  color: var(--text-light);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+}
+
+.auth-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.auth-button:active {
+  transform: translateY(0);
+}
+
+.auth-button:disabled {
+  background-color: var(--text-light);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.info-message {
+  background-color: #dbeafe;
+  color: var(--primary-dark);
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+.error-message,
+.success-message {
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: var(--error-color);
+  border: 1px solid #fecaca;
+}
+
+.success-message {
+  background-color: #d1fae5;
+  color: var(--success-color);
+  border: 1px solid #a7f3d0;
+}
+
+.error-message svg,
+.success-message svg,
+.info-message svg {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input-feedback {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: var(--transition);
+}
+
+.input-feedback.valid {
+  color: var(--success-color);
+}
+
+.input-feedback.invalid {
+  color: var(--error-color);
+}
+
+.input-feedback svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.auth-link {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.auth-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.auth-link a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.checkbox-group {
+  margin: 1rem 0;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition);
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 0.875rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox-label input[type="checkbox"]:hover {
+  border-color: var(--primary-color);
+}
+
+.checkbox-label input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.checkbox-label span {
+  user-select: none;
+}
+
+.checkbox-label a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.checkbox-label a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Botão do Google */
+.btn-google-register {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: white;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-google-register:hover {
+  background-color: var(--background-gray);
+  border-color: var(--text-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-google-register:active {
+  transform: translateY(0);
+}
+
+.btn-google-register:disabled {
+  background-color: var(--background-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-google-register svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.google-icon {
+  font-size: 1.5em;
+  font-weight: bold;
+  background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-right: 8px;
+}
+
+/* Divisor */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.divider span {
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Links */
+.auth-link {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.auth-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.auth-link a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Feedback de validação */
+.valid-input {
+  border-color: var(--success-color) !important;
+}
+
+.valid-input + .input-icon {
+  color: var(--success-color);
+}
+
+.feedback-text {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.feedback-text.success {
+  color: var(--success-color);
+}
+
+.feedback-text.error {
+  color: var(--error-color);
+}
+
+/* Animações melhoradas */
+@keyframes pulseSuccess {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.success-message {
+  animation: pulseSuccess 0.3s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .auth-content {
+    padding: 1.5rem;
+  }
+
+  .auth-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .input-with-icon input {
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+  }
+
+  .input-icon {
+    font-size: 1rem;
+    left: 0.875rem;
+  }
+}
+
+/* Estilos do botão Google */
+.google-login {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.btn-google-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffffff;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-google-register svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #4285f4;
+}
+
+.btn-google-register:hover {
+  background-color: #f8f9fa;
+  box-shadow: var(--shadow-md);
+  border-color: #d2e3fc;
+}
+
+.btn-google-register:active {
+  background-color: #f1f3f4;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-google-register:disabled {
+  background-color: #f1f3f4;
+  color: #80868b;
+  cursor: not-allowed;
+  border-color: #dadce0;
+  box-shadow: none;
+}
+
+/* Estilos do botão Google para registro */
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #fff;
+  color: #757575;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-google:hover {
+  background-color: #f8f9fa;
+  border-color: #dadce0;
+  box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+}
+
+.btn-google:active {
+  background-color: #f1f3f4;
+}
+
+.btn-google svg {
+  font-size: 1.25rem;
+}
+
+.google-login-button {
+  background-color: #4285F4; /* Cor do Google */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.google-login-button:hover {
+  background-color: #4285F4; /* Cor do Google ao passar o mouse */
+  color: white;
+}
+
+.google-login-button:hover .google-icon {
+  color: #DB4437; /* Vermelho do Google */
+}
+
+.google-login-button:hover .google-icon:nth-child(2) {
+  color: #F4B400; /* Amarelo do Google */
+}
+
+.google-login-button:hover .google-icon:nth-child(3) {
+  color: #0F9D58; /* Verde do Google */
+}
+
+.google-login-button:hover .google-icon:nth-child(4) {
+  color: #4285F4; /* Azul do Google */
+}
+
+.google-login-button:disabled {
+  background-color: #B0BEC5; /* Cor cinza quando desabilitado */
+  cursor: not-allowed;
+}

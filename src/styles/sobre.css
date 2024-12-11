@@ -1,0 +1,438 @@
+.sobre-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl);
+  background: var(--background-paper);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.sobre-hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  text-align: center;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+
+.sobre-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.sobre-hero-section h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: var(--spacing-lg);
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.sobre-hero-text {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Highlights Section */
+.sobre-highlights-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl) 0;
+}
+
+.sobre-highlight-card {
+  background: var(--background-paper);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-highlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.sobre-highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.sobre-highlight-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.1);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+}
+
+.sobre-highlight-card:hover .sobre-highlight-icon {
+  transform: scale(1.1);
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.sobre-highlight-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.sobre-highlight-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.sobre-stats-section {
+  background: var(--background-light);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  margin: var(--spacing-xl) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.sobre-stat-card {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: var(--background-paper);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.sobre-stat-card:hover::after {
+  transform: scaleX(1);
+}
+
+.sobre-stat-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  opacity: 0.9;
+}
+
+.sobre-stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sobre-stat-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sobre-stat-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Mission & Values Section */
+.sobre-about-section {
+  margin: var(--spacing-2xl) 0;
+}
+
+.sobre-mission-container,
+.sobre-values-container {
+  background: var(--background-paper);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-mission-container::before,
+.sobre-values-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(79, 70, 229, 0.05));
+  pointer-events: none;
+}
+
+.sobre-section-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-right: var(--spacing-sm);
+  vertical-align: middle;
+}
+
+.sobre-mission-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-top: var(--spacing-lg);
+  position: relative;
+}
+
+.sobre-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.sobre-value-card {
+  background: var(--background-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-value-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.sobre-value-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.sobre-value-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-right: var(--spacing-sm);
+  padding: var(--spacing-xs);
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: var(--radius-md);
+}
+
+.sobre-value-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.sobre-value-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.sobre-faq-section {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-2xl);
+  background: var(--background-paper);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-faq-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid rgba(37, 99, 235, 0.1);
+}
+
+.sobre-faq-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-right: var(--spacing-md);
+  align-items: center;
+  margin-top: -35px;
+  transition: var(--transition-base);
+}
+
+.sobre-faq-header h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.sobre-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.sobre-faq-card {
+  background: var(--background-light);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-base);
+  position: relative;
+}
+
+.sobre-faq-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.sobre-faq-card-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  opacity: 0.9;
+}
+
+.sobre-faq-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.sobre-faq-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sobre-main-container {
+    padding: var(--spacing-lg);
+  }
+
+  .sobre-hero-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .sobre-highlights-section,
+  .sobre-stats-section,
+  .sobre-values-grid,
+  .sobre-faq-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .sobre-mission-container,
+  .sobre-values-container,
+  .sobre-faq-section {
+    padding: var(--spacing-lg);
+  }
+
+  .sobre-stat-number {
+    font-size: 2.5rem;
+  }
+
+  .sobre-faq-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-faq-icon {
+    margin-right: 0;
+    margin-bottom: var(--spacing-sm);
+    margin-top: 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sobre-highlight-card,
+.sobre-stat-card,
+.sobre-value-card,
+.sobre-faq-card {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.sobre-highlight-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.sobre-highlight-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.sobre-stat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.sobre-stat-card:nth-child(3) {
+  animation-delay: 0.4s;
+}

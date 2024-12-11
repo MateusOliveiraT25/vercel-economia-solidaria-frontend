@@ -1,0 +1,463 @@
+/* Alinhar os botões no centro */
+.toggle-btn,
+.avaliacao button[type="submit"] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Cor de fundo para os botões */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.toggle-btn:hover,
+.avaliacao button[type="submit"]:hover {
+  background-color: #45a049; /* Cor de fundo quando passar o mouse */
+}
+
+/* Formulário de Avaliação */
+form {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Estilo para a área de comentários e classificação */
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.rating {
+  text-align: center;
+}
+
+.star {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ffd700;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.star.active {
+  color: #ffbf00;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+.success-message {
+  color: green;
+  text-align: center;
+}
+
+.reviews-list {
+  margin-top: 20px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Media Queries para Responsividade */
+
+/* Para telas menores que 1024px (tablets e dispositivos menores) */
+@media (max-width: 1024px) {
+  .toggle-btn,
+  .avaliacao button[type="submit"] {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  form {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  textarea {
+    font-size: 16px;
+  }
+
+  .star {
+    font-size: 20px;
+  }
+
+  .review-item {
+    font-size: 14px;
+  }
+}
+
+/* Para telas menores que 768px (smartphones) */
+@media (max-width: 768px) {
+  form {
+    width: 95%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .toggle-btn,
+  .avaliacao button[type="submit"] {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  textarea {
+    font-size: 16px;
+  }
+
+  .star {
+    font-size: 18px;
+  }
+
+  .review-item {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Para telas menores que 480px (smartphones muito pequenos) */
+@media (max-width: 480px) {
+  form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .toggle-btn,
+  .avaliacao button[type="submit"] {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  textarea {
+    font-size: 14px;
+  }
+
+  .star {
+    font-size: 16px;
+  }
+
+  .review-item {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+/* Novos estilos para a avaliação */
+
+.avaliacao-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.avaliacao-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.avaliacao-header h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.avaliacao-header p {
+  color: #666;
+  font-size: 1.1em;
+}
+
+.avaliacao-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+/* Botões de alternância */
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.toggle-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  font-size: 1.2em;
+}
+
+/* Formulário de Avaliação */
+.avaliacao-form {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 20px 0;
+  animation: slideIn 0.3s ease-out;
+}
+
+.avaliacao-form h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.rating-container {
+  margin: 20px 0;
+}
+
+.rating-container label {
+  display: block;
+  margin-bottom: 10px;
+  color: #495057;
+  font-weight: 500;
+}
+
+/* Sistema de estrelas */
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.star {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0 5px;
+}
+
+.star:hover,
+.star.active {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Campo de comentário */
+.comment-field {
+  margin: 20px 0;
+}
+
+.comment-field label {
+  display: block;
+  margin-bottom: 10px;
+  color: #495057;
+  font-weight: 500;
+}
+
+.comment-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.3s ease;
+}
+
+.comment-field textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+/* Mensagens */
+.message {
+  text-align: center;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-size: 0.95em;
+}
+
+.error-message {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #feb2b2;
+}
+
+.success-message {
+  background-color: #f0fff4;
+  color: #38a169;
+  border: 1px solid #9ae6b4;
+}
+
+/* Lista de avaliações */
+.reviews-section {
+  margin-top: 20px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.reviews-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-item {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.review-rating {
+  color: #ffd700;
+  font-size: 1.2em;
+}
+
+.review-date {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.review-comment {
+  color: #2c3e50;
+  line-height: 1.5;
+}
+
+/* Mensagem quando não há avaliações */
+.no-reviews {
+  text-align: center;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.no-reviews p {
+  color: #666;
+  margin: 10px 0;
+}
+
+.no-reviews p:first-child {
+  font-size: 1.1em;
+  color: #2c3e50;
+}
+
+/* Botão de enviar */
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  background-color: #cbd5e0;
+  cursor: not-allowed;
+}
+
+/* Animações */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .avaliacao-container {
+    padding: 15px;
+  }
+
+  .avaliacao-buttons {
+    flex-direction: column;
+  }
+
+  .toggle-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .star {
+    font-size: 28px;
+  }
+
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
